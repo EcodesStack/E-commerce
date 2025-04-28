@@ -1,0 +1,24 @@
+{
+    "installCommand": "npm install --legacy-peer-deps",
+    "version": 2,
+    "builds": [
+        {
+            "src": "e-commerce-backend/server.js",
+            "use": "@vercel/node"
+        },
+        {
+            "src": "e-commerce/package.json",
+            "use": "@vercel/static-build",
+            "config": {
+                "distDir": "e-commerce/dist"
+            }
+        },
+        {
+            "src": "admin/package.json",
+            "use": "@vercel/static-build",
+            "config": {
+                "distDir": "admin/dist"
+            }
+        }
+    ]
+}
